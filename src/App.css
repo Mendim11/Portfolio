@@ -1,0 +1,133 @@
+/* Fix particle canvas overlay blocking clicks */
+#tsparticles {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -1 !important; /* Send particles behind all content */
+  pointer-events: none !important; /* Allow clicks to pass through canvas */
+}
+
+.view-project-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.project-heading {
+  text-align: center;
+  font-weight: bold;
+}
+
+.view-project-btn {
+  margin-top: 20px;
+}
+
+.modal-content {
+  border-radius: 1rem;
+}
+/* === Modal Styling for React Projects === */
+
+.modal-content {
+  background-color: #0d0d18;
+  color: #fff;
+  border: 1px solid rgba(187, 134, 252, 0.4);
+  box-shadow: 0 0 15px rgba(187, 134, 252, 0.3);
+  border-radius: 16px;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.modal-title {
+  color: #bb86fc;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(187, 134, 252, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px rgba(187, 134, 252, 0.4);
+}
+
+.card-title {
+  color: #bb86fc;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #ddd;
+}
+
+.btn-outline-primary {
+  color: #bb86fc;
+  border-color: #bb86fc;
+}
+
+.btn-outline-primary:hover {
+  background-color: #bb86fc;
+  color: #0d0d18;
+  border-color: #bb86fc;
+}
+
+.view-project-btn {
+  background-color: #bb86fc;
+  border: none;
+  color: #0d0d18;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.view-project-btn:hover {
+  background-color: #9b6efc;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
