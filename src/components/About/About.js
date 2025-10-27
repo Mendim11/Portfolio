@@ -19,6 +19,12 @@ function About() {
       link: "https://lawkos-reactjs.netlify.app",
     },
     {
+      name: "Revivo Clinic",
+      description:
+        "A responsive and interactive web application built with React, For a medical office in Prishtina.",
+      link: "https://revivo-clinic.netlify.app",
+    },
+    {
       name: "User Management",
       description:
         "A demo version and concept of a user management page.",
