@@ -1,18 +1,100 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import React, { useState } from "react";
+import { Container, Row, Col, Button, Modal, Card } from "react-bootstrap";
 import Tilt from "react-parallax-tilt";
+import myImg from "../../Assets/avatar.svg";
 import {
   AiFillGithub,
-  AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
+  // State and handlers for projects modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  // Projects array
+  const projects = [
+    {
+      name: "AwesomeReactApp",
+      description:
+        "A responsive and interactive web application built with React, showcasing modern UI, Dark Mode and reusable components.",
+      link: "https://lawkos-reactjs.netlify.app",
+    },
+    {
+      name: "Revivo Clinic",
+      description:
+        "A responsive and interactive web application built with React, For a medical office in Prishtina.",
+      link: "https://revivo-clinic.netlify.app",
+    },
+    {
+      name: "User Management",
+      description:
+        "A demo version and concept of a user management page.",
+      link: "https://users-managment-reactjs.netlify.app",
+    },
+    {
+      name: "Find My Recipe",
+      description:
+        "A demo page and idea of a web that helps you find recipes of daily food.",
+      link: "https://find-my-recipe-reactjs.netlify.app/",
+    },
+    {
+      name: "Farm info Web",
+      description:
+        "A useful webpage made for a local farm in Kosova, Made with wordpress.",
+      link: "https://kaage-farm.com/",
+    },
+  ];
+
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
+
+        {/* === Projects Section === */}
+        <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
+          <Col md={8} className="project-description">
+            <h1 className="project-heading">
+              My Latest <strong className="purple">React Projects</strong>
+            </h1>
+            <p style={{ fontSize: "1.1em", color: 'white' }}>
+              I’ve been working on multiple React projects recently. Click below
+              to explore them all!
+            </p>
+
+            <Button onClick={handleShow} className="view-project-btn" variant="primary">
+              View Projects
+            </Button>
+          </Col>
+        </Row>
+
+        {/* === Modal Popup for Projects === */}
+        <Modal show={show} onHide={handleClose} centered>
+          <Modal.Header closeButton>
+            <Modal.Title>My React Projects</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {projects.map((project, index) => (
+              <Card key={index} className="mb-3 shadow-sm">
+                <Card.Body>
+                  <Card.Title>{project.name}</Card.Title>
+                  <Card.Text>{project.description}</Card.Text>
+                  <Button
+                    variant="outline-primary"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    View Live
+                  </Button>
+                </Card.Body>
+              </Card>
+            ))}
+          </Modal.Body>
+        </Modal>
+
+        {/* === “Let Me Introduce Myself” Section === */}
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
@@ -58,6 +140,8 @@ function Home2() {
             </Tilt>
           </Col>
         </Row>
+
+        {/* === Social Links === */}
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
@@ -68,30 +152,19 @@ function Home2() {
               <li className="social-icons">
                 <a
                   href="https://github.com/Mendim11"
-                  
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <AiFillGithub />
                 </a>
-              </li>
-              <li className="social-icons">
-                {/* <a
-                  href="https://twitter.com/Soumyajit4419"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="icon-colour  home-social-icons"
-                >
-                  <AiOutlineTwitter />
-                </a> */}
               </li>
               <li className="social-icons">
                 <a
                   href="https://www.linkedin.com/in/mendimgashi/"
                   target="_blank"
                   rel="noreferrer"
-                  className="icon-colour  home-social-icons"
+                  className="icon-colour home-social-icons"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -109,8 +182,10 @@ function Home2() {
             </ul>
           </Col>
         </Row>
+
       </Container>
     </Container>
   );
 }
+
 export default Home2;

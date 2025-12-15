@@ -1,3 +1,4 @@
+
 /* Fix particle canvas overlay blocking clicks */
 #tsparticles {
   position: fixed !important;
