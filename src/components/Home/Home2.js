@@ -26,7 +26,7 @@ function Home2() {
       name: "Revivo Clinic",
       description:
         "A responsive and interactive web application built with React, For a medical office in Prishtina.",
-      link: "https://revivo-clinic.netlify.app",
+      link: "https://revivo-clinic.live",
     },
     {
       name: "User Management",
